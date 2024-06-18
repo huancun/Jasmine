@@ -9,6 +9,13 @@
             <span><?php echo getCopyrightDate(); ?> <?php $this->options->title(); ?>. All Rights Reserved.</span>
         </div>
         <span>Theme <a href="https://github.com/liaocp666/Jasmine" title="Jasmine" target="_blank">Jasmine</a> by <a href="https://www.liaocp.cn/" title="Kent Liao" target="_blank">Kent Liao</a></span>
+
+            <?php if ($this->options->icpCode): ?>
+                <li class="flex flex-row items-center gap-x-2">
+                    <span class="text-sm "><a href="https://beian.miit.gov.cn/" target="_blank"><?php $this->options->icpCode(); ?></a></span>
+                </li>
+            <?php endif; ?>
+
     </div>
 </div>
 <?php $this->footer(); ?>

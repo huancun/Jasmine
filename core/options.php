@@ -151,7 +151,7 @@ function themeConfig($form)
       "PopularTags" => "热门标签",
       "About" => "关于站长",
     ],
-    ["Author", "PopularArticles", "LatestComments", "PopularTags", "About"],
+    ["Author", "PopularArticles", "PopularCategories", "About"],
     _t("侧边栏显示"),
     _t("默认显示作者信息，热门文章，最新评论，热门标签，关于站长")
   );

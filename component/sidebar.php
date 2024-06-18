@@ -45,27 +45,6 @@
           </ul>
       </div>
     <?php endif; ?>
-    <?php if (inArrayOptionValueOrDefault("sidebarRightWidget", "LatestComments", true)): ?>
-    <div class="flex flex-col justify-start gap-x-3 border-b border-stone-100 dark:border-neutral-600 gap-y-4 pb-12 mt-4">
-        <div class="flex flex-row items-center  jasmine-primary-color">
-            <iconify-icon icon="tabler:message" class="rounded pr-1 text-xl font-medium"></iconify-icon>
-            <span class="font-medium">最新评论</span>
-        </div>
-        <ul class="flex flex-col gap-y-3 px-1">
-            <?php $this->widget("Widget_Comments_Recent", [])->to($newComments); ?>
-            <?php if ($newComments->have()): ?>
-                <?php while ($newComments->next()): ?>
-                    <li>
-                        <a href="<?php $newComments->permalink(); ?>"
-                           title="<?php $newComments->excerpt(35, "..."); ?>"
-                           class="line-clamp-2  text-sm dark:text-gray-400 jasmine-link-color-hover text-neutral-500">
-                            <?php echo $newComments->author; ?>: <?php $newComments->excerpt(35, "..."); ?></a>
-                    </li>
-                <?php endwhile; ?>
-            <?php endif; ?>
-        </ul>
-    </div>
-    <?php endif; ?>
     <?php if (inArrayOptionValueOrDefault("sidebarRightWidget", "PopularCategories", false)): ?>
     <div class="flex flex-col justify-start gap-x-3 border-b border-stone-100 dark:border-neutral-600 gap-y-4 pb-12 mt-4">
         <div class="flex flex-row items-center  jasmine-primary-color">
@@ -85,26 +64,6 @@
             <?php endif; ?>
         </ul>
     </div>
-    <?php endif; ?>
-    <?php if (inArrayOptionValueOrDefault("sidebarRightWidget", "PopularTags", true)): ?>
-      <div class="flex flex-col justify-start gap-x-3 border-b border-stone-100 dark:border-neutral-600 gap-y-4 pb-12 mt-4">
-          <div class="flex flex-row items-center  jasmine-primary-color">
-              <iconify-icon icon="tabler:bookmarks" class="rounded pr-1 text-xl font-medium"></iconify-icon>
-              <span class="font-medium">热门标签</span>
-          </div>
-          <ul class="flex flex-wrap gap-y-2">
-              <?php $this->widget("Widget_Metas_Tag_Cloud", "ignoreZeroCount=1&limit=15")->to($tags); ?>
-              <?php if ($tags->have()): ?>
-                  <?php while ($tags->next()): ?>
-                      <li>
-                          <a href="<?php $tags->permalink(); ?>"
-                             title="<?php $tags->name(); ?>"
-                             class=" dark:text-gray-400 text-sm rounded-full px-3 py-1 jasmine-primary-bg-hover hover:text-white"><?php $tags->name(); ?></a>
-                      </li>
-                  <?php endwhile; ?>
-              <?php endif; ?>
-          </ul>
-      </div>
     <?php endif; ?>
     <?php if (inArrayOptionValueOrDefault("sidebarRightWidget", "About", true)): ?>
     <div class="flex flex-col justify-start gap-x-3 gap-y-4 pb-12 mt-4">
