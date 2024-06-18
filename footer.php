@@ -8,7 +8,7 @@
             <iconify-icon icon="tabler:copyright" class="text-gray-800 dark:dark:text-gray-400""></iconify-icon>
             <span><?php echo getCopyrightDate(); ?> <?php $this->options->title(); ?>. All Rights Reserved.</span>
         </div>
-        <span>Theme <a href="https://github.com/liaocp666/Jasmine" title="Jasmine" target="_blank">Jasmine</a> by <a href="https://www.liaocp.cn/" title="Kent Liao" target="_blank">Kent Liao</a></span>
+        <span>Theme <a href="https://github.com/liaocp666/Jasmine" title="Jasmine" target="_blank">Jasmine</a></span>
 
             <?php if ($this->options->icpCode): ?>
                 <li class="flex flex-row items-center gap-x-2">
